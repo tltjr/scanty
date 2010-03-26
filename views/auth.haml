@@ -1,0 +1,7 @@
+%h2 Admin Auth
+%form{:action => '/auth', :method => :post}
+  %input{:type => 'password', :name => 'password'}/
+  %input{:type => 'submit', :value => 'Login'}/
+%script{:type => 'text/javascript'}
+  document.forms[0].password.focus()
+
