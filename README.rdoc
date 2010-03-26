@@ -30,7 +30,12 @@ Sequel, Maruku, and Syntax are all vendored.
 Edit main.rb and change the Blog config struct at the top to your liking.  For
 security purposes, change the admin password and the admin cookie key and
 value.  These last two can be set to any random value you like, just choose
-something other than the default.
+something other than the default. The rest of the Blog config struct configures
+the navigation links at the top of the blog. They links are optional and can be
+toggled off by setting :main_nav = false. If they are left on, change the name
+fields to what you would like displayed on your blog and the link fields to
+where you want to direct users. See the comments with the struct and 
+http://thomasthornton.heroku.com/ for an example.
 
 Then run the server:
 

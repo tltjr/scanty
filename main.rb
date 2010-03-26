@@ -16,7 +16,19 @@ configure do
 		:admin_password => 'admin',
 		:admin_cookie_key => 'blog_admin',
 		:admin_cookie_value => '93e2g124913too58',
-		:disqus_shortname => 'tltjr'
+		:disqus_shortname => 'tltjr',
+                # The below lines create nav elements at the top of each 
+                # screen. They can be turned off by setting main_nav to 
+                # true. The name is what is displayed and the link is 
+                # what each directs to. See http://thomasthornton.heroku.com/
+                # for an example.
+                :main_nav => true,
+                :nav_one_name => 'Home',
+                :nav_one_link => '/',
+                :nav_two_name => 'GitHub',
+                :nav_two_link => 'http://github.com/thomasthornton/',
+                :nav_three_name => 'Resume',
+                :nav_three_link => '/resume'
 	)
 end
 
@@ -45,7 +57,7 @@ layout 'layout'
 ### Public
 
 get '/' do
-	posts = Post.reverse_order(:created_at).limit(10)
+	posts = Post.reverse_order(:created_at).limit(5)
 	haml :index, :locals => { :posts => posts }, :layout => false
 end
 
