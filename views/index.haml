@@ -41,6 +41,7 @@
           %a{:href => '/'}
             = Blog.title
     #content
+      - first = true
       - posts.each do |post|
         .post
           %p.date
@@ -56,9 +57,13 @@
                 |
                 %a{:href => "{post.url}#disqus_thread"}comments
           .entry
-            = post.summary_html
-            - if post.more?
-              %a{:href => post.url}Continue reading
+            - if first
+              = post.body_html
+            - else
+              = post.summary_html
+              - if post.more?
+                %a{:href => post.url}Continue reading
+        - first = false
       - if posts.empty?
         %h2
           %p Looks like this is a fresh install of Scanty.
