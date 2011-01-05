@@ -26,7 +26,7 @@ configure do
                 :nav_one_name => 'Home',
                 :nav_one_link => '/',
                 :nav_two_name => 'GitHub',
-                :nav_two_link => 'http://github.com/thomasthornton/',
+                :nav_two_link => 'http://github.com/tltjr/',
                 :nav_three_name => 'Resume',
                 :nav_three_link => '/resume'
 	)
